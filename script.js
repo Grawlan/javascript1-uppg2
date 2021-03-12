@@ -12,8 +12,8 @@ const fetchTodos = () => {
       listTodos();
     })
 }
-fetchTodos();
 
+fetchTodos();
 
 const listTodos = () => {
   output.innerHTML = '';
@@ -31,13 +31,12 @@ const newTodo = (todo) => {
   errorCheck.innerText = 'error text here'
   let liContent = document.createElement('div');
   liContent.classList.add('listContent');
-
   let title = document.createElement('h3');
   title.innerText = todo.title;
   let flexContainer = document.createElement('div');
   flexContainer.classList.add('flexContainer');
   let deleteButton = document.createElement('button');
-  deleteButton.classList.add('buttn');
+  deleteButton.classList.add('buttn', 'buttn-delete');
   deleteButton.innerHTML = '<i class="far fa-trash-alt"></i>';
   deleteButton.addEventListener('click', function() {
     if(todo.completed) {
@@ -57,7 +56,7 @@ const newTodo = (todo) => {
   })
  
   if(todo.completed) {
-    title.classList.add('completed')
+    liContent.classList.add('completed')
     }
   flexContainer.appendChild(checkButton);
   flexContainer.appendChild(deleteButton);
