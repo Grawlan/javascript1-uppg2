@@ -23,7 +23,6 @@ const listTodos = () => {
 }
 
 const newTodo = (todo) => {
-
   let todoItem = document.createElement('li');
   todoItem.classList.add('listItem');
   let errorCheck = document.createElement('small');
